@@ -20,5 +20,15 @@ describe("Alumno", () => {
 
     expect(alumno.esMayorDeEdad()).toBe(false);
   });
+  
+   test("un alumno de 18 años debe tener el estado 'Mayor de edad'", () => {
+    const alumno = new Alumno("Juan", 18, 1234);
+    expect(alumno.obtenerEstado()).toBe("Mayor de edad");
+  });
 
+  test("un alumno de 17 años debe tener el estado 'Menor de edad'", () => {
+    const alumno = new Alumno("Pedro", 17, 3456);
+    expect(alumno.obtenerEstado()).toBe("Menor de edad");
+  });
 });
+
